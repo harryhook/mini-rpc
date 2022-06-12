@@ -57,7 +57,7 @@ public class RpcConsumerPostProcessor implements ApplicationContextAware, BeanCl
             if (context.containsBean(beanName)) {
                 throw new IllegalArgumentException("spring context already has a bean named " + beanName);
             }
-            registry.registerBeanDefinition(beanName, rpcRefBeanDefinitions.get(beanName));
+            registry.registerBeanDefinition(beanName, beanDefinition);
             log.info("registered RpcReferenceBean {} success.", beanName);
         });
     }
